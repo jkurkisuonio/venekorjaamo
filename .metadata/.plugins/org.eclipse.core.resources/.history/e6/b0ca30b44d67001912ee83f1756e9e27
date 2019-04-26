@@ -1,0 +1,24 @@
+package fi.haagahelia.venekorjaamo.Dao;
+
+public class Dao_ekataulu extends Dao {
+	public ArrayList<ekataulu> listaaKaikki() throws Exception{
+		ArrayList<ekataulu> ekataulut = new ArrayList<ekataulu>();
+		sql = "SELECT * FROM ekataulu"; 		
+		con=yhdista();
+		if(con!=null){ //jos yhteys onnistui
+			stmtPrep = con.prepareStatement(sql);        		
+    		rs = stmtPrep.executeQuery();   
+			if(rs!=null){ //jos kysely onnistui									
+				while(rs.next()){
+					ekataulu postinumero = new Postinumero();
+					postinumero.setPostinumero(rs.getString("Postinumero"));
+					postinumero.setPostitoimipaikka(rs.getString("Postitoimipaikka"));
+					postinumerot.add(postinumero);
+				}					
+			}
+			con.close();
+		}			
+		return postinumerot;
+	}
+
+}

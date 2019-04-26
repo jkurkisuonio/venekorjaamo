@@ -1,0 +1,32 @@
+package fi.haagahelia.venekorjaamo.Model;
+
+public class Ekataulu {
+
+	@Override
+	public String toString() {
+		return "ekataulu [Id=" + Id + ", Nimi=" + Nimi + "]";
+	}
+	public Ekataulu(int id, String nimi) {
+		super();
+		Id = id;
+		Nimi = nimi;
+	}
+	public Ekataulu() {
+		// TODO Auto-generated constructor stub
+	}
+	private int Id;
+	private String Nimi;
+	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getNimi() {
+		return Nimi;
+	}
+	public void setNimi(String nimi) {
+		Nimi = nimi;
+	}
+}

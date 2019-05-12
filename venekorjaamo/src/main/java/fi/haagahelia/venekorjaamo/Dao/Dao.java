@@ -7,7 +7,11 @@ import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Dao { 
+	
+
 	public Connection con=null;
 	public ResultSet rs = null;
 	public PreparedStatement stmtPrep=null; 
